@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + Vue + TS</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+  <script>
+    function adjustFontSize() {
+      // 设置基准宽度和基准字体大小
+      const baseWidth = 1920;
+      const baseFontSize = 16;
+
+      // 获取屏幕宽度
+      const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+      // 计算相对于基准宽度的缩放比例
+      const scale = screenWidth / baseWidth;
+
+      // 计算字体大小
+      const fontSize = baseFontSize * scale;
+
+      // 设置根元素的字体大小
+      document.documentElement.style.fontSize = fontSize + 'px';
+    }
+
+    // 在页面加载和窗口大小变化时调整字体大小
+    window.addEventListener('load', adjustFontSize);
+    window.addEventListener('resize', adjustFontSize);
+  </script>
+</body>
+
+</html>
